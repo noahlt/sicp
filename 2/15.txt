@@ -1,0 +1,1 @@
+In my investigation in exercise 14, I found that error bounds widen with every arithmetic operation, particularly multiplication and division. Eva is right.

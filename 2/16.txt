@@ -1,0 +1,11 @@
+Equivalent algebraic expressions lead to different answers because algebra is symbolic and doesn't deal with computing each actual operation, and when you actually compute each operation the error margins widen each time.  More importantly, the error margins widen at different rates depending on which operations you compute.
+
+So here's one way to devise an interval arithmetic package that doesn't lead to different values: start by accepting the expression to be computed in a symbolic algebraic representation, and before computing its value manipulate the expression algebraically into a canonical form.  Then substitute the values of each variable into the canonical form of the expression and compute the final value.
+
+I know it's possible to build a computer algebra system that converts algebraic expressions into canonical form because I've seen Mathematica and Maple do so. (This question would have been much more difficult before CASs were widespread.)  But Wolfram made a lot of money from building Mathematica, so I'm not sure I want to duplicate all that effort just for this exercise.
+
+But I'm fairly certain it's possible.
+
+Furthermore, it seems likely to me that any arbitrary canonical representation will not be the expression which will result in the fewest interval-arithmatic operations, that is to say, the tightest error margins.  A really impressive feat would be to build a system that found the equivalent algebraic expression which would result in the tightest error bounds after computing the interval arithmetic.  I'm not sure that's possible.
+
+(note: I found that multiplication in our interval arithmetic package is commutative, which is nice because it means our canonical algebraic representation need only include the data normally considered in algebra, i.e., it doesn't need to specify the order of multiplication statements.)

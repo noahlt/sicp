@@ -1,0 +1,1 @@
+As footnote 46 says, taking the remainder at every step mostly frees us from working with numbers larger than m.  Math with big numbers is slow.  Math with small numbers is fast.  Exponents get big fast.  Taking the remainder all the time keeps the numbers small, which keeps our program fast.

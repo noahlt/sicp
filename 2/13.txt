@@ -1,0 +1,33 @@
+First, a quick experiment:
+
+> (define a (make-center-percent 3.5 0.05))
+> (define b (make-center-percent 6.8 0.10))
+> (percent (mul-interval a b))
+0.14925373134328354
+> (+ (percent a) (percent b))
+0.1499999999999999
+
+I noticed that the percentage width of the product ab was suspiciously similar to the percentage width of the sum of the percentage widths of a and b, so I set out to work through the multiplication algebraically and see if I found anything along that line of thought:
+
+[ notation:
+    [x, y] is an interval with lower bound x and upper bound y
+    (x ± w) is an interval with center x and width w
+    w_x is the width of interval x,
+    p_x is the percentage width of interval x ]
+
+Assuming a and b are intervals with positive lower bounds, and p_a and p_b are small percentage tolerances:
+
+(a ± w_a) * (b ± w_b)
+ = [a - w_a, a + w_a] * [b - w_b, b + w_b]
+ = [(a - w_a)(b - w_b), (a + w_a)(b + w_b)]
+ = [(a - p_a * a)(b - p_b * b), (a + p_a * a)(b + p_b * b)]
+ = [ab(1 - p_a)(1 - p_b), ab(1 + p_a)(1 + p_b)]
+ = [ab(1 - p_a - p_b + p_a*p_b), ab(1 + p_a + p_b + p_a * p_b)]
+
+    Now, since we assumed p_a and p_b are small, then p_a * p_b must be REALLY small.  Probably less than a percent.  So we'll just ignore it in the sum…
+
+ = [ab(1 - p_a - p_b), ab(1 + p_a + p_b)]
+ = [ab(1 - (p_a + p_b)), ab(1 + (p_a + p_b))]
+ = [ab - (p_a + p_b)ab, ab + (p_a + p_b)ab]
+
+So given positive intervals a and b where p_a and p_b are small percentage tolerances, then the percentage tolerance of the product ab is approximately p_a + p_b.
