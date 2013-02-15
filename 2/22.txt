@@ -1,0 +1,3 @@
+In Louis' first version of square-list, he builds up a list called answer, which he eventually returns. In each iterative step, he prepends to answer the square of the car of items.  So he's going through items forwards, but he's building answer backwards.  Naturally, this reverses the list.
+
+In his revision of square-list, he tries simply reversing the two arguments to cons, consing answer to (square (car things)).  It'll result in a weird list structure, because at each step in the iteration he's making the car of answer be a list instead of a number. It won't be a properly linked list.
