@@ -1,0 +1,1 @@
+Our implementation of queen-cols calls itself k times. Louis' implementation calls itself board-size*k times, so one would expect it to run board-size times slower than our implementation.
