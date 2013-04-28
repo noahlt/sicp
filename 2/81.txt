@@ -1,0 +1,73 @@
+2.81
+
+a.
+
+(define (scheme-number->scheme-number n) n)
+(define (complex->complex z) z)
+(put-coercion 'scheme-number 'scheme-number scheme-number->scheme-number)
+(put-coercion 'complex 'complex complex->complex)
+
+(define (exp x y) (apply-generic 'exp x y))
+(put 'exp '(scheme-number scheme-number)
+     (lambda (x y) (tag (expt x y))))
+
+;; in scheme-number package
+(put 'exp '(scheme-number scheme-number)
+     (lambda (x y) (tag (expt x y))))
+
+a. Suppose  we call exp with two complex numbers, a and b, as arguments.
+apply-generic tries to coerce the arguments to each others' type because there
+is no exp operation defined for arguments type '(complex complex). apply-generic
+looks up coercions from a's type to b's type, and vice versa, both finding in
+both cases complex->complex.  It applies the coercion from a's type to b's type
+first, then tries to call apply-generic on the result:
+  
+  (apply-generic exp (t1->t2 a1) a2)
+  (apply-generic exp (complex->complex a) b)
+  (apply-generic exp a b)
+
+Hence, the final expression to be evaluated by (apply-generic exp a b) will be
+(apply-generi exp a b), that is, the same expression, and so this process will
+be an infinite loop.
+
+b.
+
+Louis is incorrect. apply-generic works correctly as is.  The first thing
+apply-generic tries, before coercing anything, is to look up the an operation
+on arguments of the supplied types.  If the operation for two arguments of
+the same type does not exist, then the system doesn't know how to handle it.
+Coercing an object to its own type is essentially a no-op, and, as we saw in
+part a, leads to an endless loop.
+
+Louis probably thinks coercion is a solution because it can yield a valid
+operation when you've been passed two objects of different types. That's because,
+after failing to find an operation for the given types, coercion changes the
+types and so changes the operations we might find.  But if we aren't changing
+the types of the arguments (which we aren't when we "coerce" a type to its own
+type), we won't be looking in a different spot in the operations table, so there's
+no point.
+
+c.
+
+(define (apply-generic op . args)
+  (let ((type-tags (map type-tag args)))
+    (let ((proc (get op type-tags)))
+      (if proc
+          (apply proc (map contents args))
+          (if (and (= (length args) 2)
+                   (not (equal? (car type-tags) (cadr type-tags)))) ; <--- here
+              (let ((type1 (car type-tags))
+                    (type2 (cadr type-tags))
+                    (a1 (car args))
+                    (a2 (cadr args)))
+                (let ((t1->t2 (get-coercion type1 type2))
+                      (t2->t1 (get-coercion type2 type1)))
+                  (cond (t1->t2
+                         (apply-generic op (t1->t2 a1) a2))
+                        (t2->t1
+                         (apply-generic op a1 (t2->t1 a2)))
+                        (else
+                         (error "No method for these types"
+                                (list op type-tags))))))
+              (error "No method for these types"
+                     (list op type-tags)))))))

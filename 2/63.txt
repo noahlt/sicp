@@ -1,0 +1,36 @@
+Example set: {1, 3, 5, 7, 9, 11}
+
+Example trees:
+
+    7
+   / \
+  3   9
+ / \   \
+1   5   11
+
+'(1 3 5 7 9 11)
+
+
+  3
+ / \
+1   7
+   / \
+  5   9
+       \
+        11
+
+'(1 3 5 7 9 11)
+
+
+     5
+    / \
+   3   9
+  /   / \
+ 1   7   11
+
+'(1 3 5 7 9 11)
+
+The two procedures always produce the same list, given the same
+tree. While both procedures take the same number of steps (O(n)) to
+convert a given tree to a list, tree->list-2 is tail-recursive and
+therefore takes slightly less memory.

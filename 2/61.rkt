@@ -1,0 +1,18 @@
+(define (adjoin-set x set)
+  (if (null? set)
+      (list x)
+      (let ((first (car set))
+            (second (and (not (null? (cdr set))) (cadr set)))
+            (rest (cdr set)))
+        (cond ((= x first) set)
+              ((and second (< first x second))
+               (cons first (cons x rest)))
+              (else
+               (cons first (adjoin-set x rest)))))))
+
+(display (adjoin-set 4 '(1 3 6 10)))
+(newline)
+(display (adjoin-set 14 '(1 3 6 10)))
+(newline)
+(display (adjoin-set 9 '(1 3 6 10)))
+(newline)

@@ -1,0 +1,5 @@
+Assuming we're using the special-case powers-of-two-frequencies tree…
+
+For the most-frequent symbol, the encoding procedure still has to search the member lists of both branches of the tree, which will take O(n) time.
+
+For the least-frequent symbol, the encoding procedure has to search the member lists at each level (which will take up to n steps), and there are n-1 levels of the tree, so it will take O(n^2) time.

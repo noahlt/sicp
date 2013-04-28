@@ -1,0 +1,22 @@
+(list->tree '(1 3 5 7 9 11)) produces this tree:
+
+   5
+ /   \
+1      9
+ \    / \
+  2  7   11
+
+It works by splitting the list into two, with the left half of the
+list forming the left branch, the right half forming the right branch,
+and the element in between these two halves forming the entry at the
+current level of the tree.  Partial-tree calls itself recursively on
+the parts of the list which will form the left and right branches.
+
+One important feature of this procedure is that partial-tree returns
+not only the tree it constructed but also the remainder of the list
+which was not included in the tree.  This way, partial-tree can call
+itself on the left half, then take the unused part of the list to form
+the entry and the right half.  Thus partial-tree iterates over the
+list a single time: it constructs a balanced binary tree out of a
+sorted list in O(n) time.
+

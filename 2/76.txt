@@ -1,0 +1,11 @@
+For a system with generic operations with explicit dispatch,
+  to add new types of data objects requires modifying every single existing operation, &
+  to add new operations is fairly straightforward.
+
+For a system written in the data-directed style,
+  to add new types of data objects requires simply adding a new put clause, &
+  to add new operations requires modifying every single data type, or risking type errors.
+
+For a system written in the message-passing style,
+  to add new types of data objects requires simply adding a new dispatch constructor, &
+  to add new operations requires modifying every constructor, or risking type errors.

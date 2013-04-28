@@ -1,0 +1,39 @@
+z evaluates to (complex rectangular 3 . 4)
+
+(magnitude z) expects an object tagged with polar or rectangular, but not complex. That is, (magnitude z) expects an argument like (rectangular 3 . 4), because it evaluates like this:
+
+(magnitude z)
+(apply-generic 'magnitude z)
+; which looks through the type tag table for a procedure magnitude
+; on type complex, and finds none.
+
+We can fix this per Alyssa's suggestion:
+
+(put 'magnitude '(complex) magnitude)
+
+after which the call evaluates like this
+
+(magnitude z)
+(magnitude '(complex rectangular 3 . 4))
+(apply-generic 'magnitude '(complex rectangular 3 . 4))
+; which looks through the type tag table for a procedure magnitude
+; on type complex, and finds magnitude (exported by Ben's package), and runs
+(apply magnitude (map contents '((complex rectangular 3 . 4)))
+(apply magnitude '((rectangular 3 . 4)))
+(apply-generic 'magnitude '(rectangular 3 . 4))
+; which looks through the type tag table for a procedure magnitude
+; on type rectangular, finds it from Ben's package on pg 182, and runs
+(apply (lambda (z)
+         (sqrt (+ (square (real-part z))
+                  (square (imag-part z)))))
+       (map contents '((rectangular 3 . 4))))
+(apply (lambda (z)
+         (sqrt (+ (square (real-part z))
+                  (square (imag-part z)))))
+       '(3 . 4))
+(sqrt (+ (square (real-part '(3 . 4)))
+         (square (imag-part '(3 . 4)))))
+(sqrt (+ (square 3) (square 4)))
+5
+
+apply-generic is called twice, once for each layer of type tags, unwrapping it each time.

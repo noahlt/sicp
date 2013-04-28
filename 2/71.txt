@@ -1,0 +1,42 @@
+A B C D E
+1 2 4 8 16
+
+        *
+       / \
+      *   E
+     / \
+    *   D
+   / \
+  *   C
+ / \
+A   B
+
+A B C D  E  F  G   H   I   J
+1 2 4 8 16 32 64 128 256 512
+
+                  *
+                 / \
+                *   J
+               / \
+              *   I
+             / \
+            *   H
+           / \
+          *   G
+         / \
+        *   F
+       / \
+      *   E
+     / \
+    *   D
+   / \
+  *   C
+ / \
+A   B
+
+
+
+If the frequencies of symbols in an alphabet of n symbols is 1,2,4,…,2^(n-1), then:
+
+most frequent symbol takes 1 bit
+least frequent symbol takes n-1 bits.

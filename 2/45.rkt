@@ -23,4 +23,4 @@
           (beside (below painter top-left)
                   (below bottom-right corner))))))
 
-(paint (corner-split einstein 3))
+(paint-hires (corner-split einstein 3))
