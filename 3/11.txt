@@ -1,0 +1,15 @@
+> Where is the local state for acc kept?
+
+Local state for acc is kept in E1, the frame created by make-account.
+
+> Suppose we define another account
+> 
+>     (define acc2 (make-account 100))
+>
+> How are the local states for the two accounts kept distinct?
+
+make-account generates a new frame every time it is called.  This frame keeps the state for the account (namely, the value of balance).
+
+> Which parts of the environment structure are shared between acc and acc2?
+
+The only frame shared between the two is the global frame.  Depending on the Lisp implementation, acc and acc2 may also share procedure definitions for the withdraw, deposit, and dispatch procedures.

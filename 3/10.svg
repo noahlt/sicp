@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1094px" height="1722px" viewBox="0 0 1094 1722" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <title>10</title>
+    <description>Created with Sketch (http://www.bohemiancoding.com/sketch)</description>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="define-W1" sketch:type="MSLayerGroup" transform="translate(35.000000, 36.000000)">
+            <rect id="Rectangle-2" stroke="#979797" sketch:type="MSShapeGroup" x="0" y="53" width="880" height="71"></rect>
+            <text id="global-env:" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="0" y="45">global env:</tspan>
+            </text>
+            <text id="Environments-created" sketch:type="MSTextLayer" font-family="Helvetica" font-size="18" font-weight="bold" fill="#000000">
+                <tspan x="0" y="18">Environments created by evaluating (define W1 (make-withdraw 100))</tspan>
+            </text>
+            <text id="make-withdraw:" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="14" y="75">make-withdraw:</tspan>
+                <tspan x="14" y="89">W1:</tspan>
+            </text>
+            <path d="M57.5,85.5 L57.5,299.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M57.5,299.5 C58.55,295.72 59.45,292.48 60.5,288.7 C58.4,288.7 56.6,288.7 54.5,288.7 C55.55,292.48 56.45,295.72 57.5,299.5 C57.5,299.5 57.5,299.5 57.5,299.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M56.5,85.5 L42.5,85.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <g id="Cons" transform="translate(474.000000, 162.000000)" stroke="#979797" sketch:type="MSShapeGroup">
+                <circle id="Oval-1" cx="16" cy="16" r="16"></circle>
+                <circle id="Oval-1" fill="#9B9B9B" cx="16" cy="16" r="6"></circle>
+                <circle id="Oval-1" cx="48" cy="16" r="16"></circle>
+                <circle id="Oval-1" fill="#9B9B9B" cx="48" cy="16" r="6"></circle>
+            </g>
+            <g id="W1" transform="translate(26.000000, 273.000000)">
+                <g id="Cons" transform="translate(0.000000, 29.000000)" stroke="#979797" sketch:type="MSShapeGroup">
+                    <circle id="Oval-1" cx="16" cy="16" r="16"></circle>
+                    <circle id="Oval-1" fill="#9B9B9B" cx="16" cy="16" r="6"></circle>
+                    <circle id="Oval-1" cx="48" cy="16" r="16"></circle>
+                    <circle id="Oval-1" fill="#9B9B9B" cx="48" cy="16" r="6"></circle>
+                </g>
+                <path d="M229.5,44.5 L229.5,0.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M229.5,0.5 C228.45,4.28000005 227.55,7.52000009 226.5,11.3000001 C228.6,11.3 230.4,11.3 232.5,11.2999999 C231.45,7.51999991 230.55,4.27999995 229.5,0.5 C229.5,0.5 229.5,0.5 229.5,0.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M228.5,44.5 L46.5,44.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path d="M15.5,44.5 L15.5,95.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M15.5,95.5 C16.55,91.72 17.45,88.4800001 18.5,84.7000001 C16.4,84.7 14.6,84.7 12.5,84.6999999 C13.55,88.4799999 14.45,91.72 15.5,95.5 C15.5,95.5 15.5,95.5 15.5,95.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <text id="parameters:-amount" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="0" y="105">parameters: amount</tspan>
+                    <tspan x="0" y="119">body:</tspan>
+                    <tspan x="0" y="133" font-family="Monaco" font-size="10">(if (&gt;= balance amount)</tspan>
+                    <tspan x="0" y="147" font-family="Monaco" font-size="10">    (begin (set! balance (- balance amount))</tspan>
+                    <tspan x="0" y="161" font-family="Monaco" font-size="10">           balance)</tspan>
+                    <tspan x="0" y="175" font-family="Monaco" font-size="10">    “insufficient funds”)</tspan>
+                    <tspan x="150" y="175" font-family="Monaco" font-size="11"></tspan>
+                </text>
+            </g>
+            <g id="E1" transform="translate(184.000000, 125.000000)">
+                <text id="initial-amount:-100" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="58" y="63">initial-amount: 100</tspan>
+                </text>
+                <rect id="Rectangle-1" stroke="#979797" sketch:type="MSShapeGroup" x="48" y="44" width="119" height="30"></rect>
+                <text sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="0" y="62">E1</tspan>
+                </text>
+                <path d="M22.5,57.5 L41.5,57.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M41.5,57.5 C37.72,56.45 34.48,55.55 30.7,54.5 C30.7,56.6 30.7,58.4 30.7,60.5 C34.48,59.45 37.72,58.55 41.5,57.5 C41.5,57.5 41.5,57.5 41.5,57.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M71.5,44.5 L71.5,0.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M71.5,0.5 C70.45,4.28000005 69.55,7.52000009 68.5,11.3000001 C70.6,11.3 72.4,11.3 74.5,11.2999999 C73.45,7.51999991 72.55,4.27999995 71.5,0.5 C71.5,0.5 71.5,0.5 71.5,0.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            </g>
+            <g id="E2" transform="translate(184.000000, 199.000000)">
+                <text id="balance:-100" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="58" y="63">balance: 100</tspan>
+                </text>
+                <rect id="Rectangle-1" stroke="#979797" sketch:type="MSShapeGroup" x="48" y="44" width="119" height="30"></rect>
+                <text sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="0" y="62">E2</tspan>
+                </text>
+                <path d="M22.5,57.5 L41.5,57.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M41.5,57.5 C37.72,56.45 34.48,55.55 30.7,54.5 C30.7,56.6 30.7,58.4 30.7,60.5 C34.48,59.45 37.72,58.55 41.5,57.5 C41.5,57.5 41.5,57.5 41.5,57.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M71.5,44.5 L71.5,0.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M71.5,0.5 C70.45,4.28000005 69.55,7.52000009 68.5,11.3000001 C70.6,11.3 72.4,11.3 74.5,11.2999999 C73.45,7.51999991 72.55,4.27999995 71.5,0.5 C71.5,0.5 71.5,0.5 71.5,0.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            </g>
+            <path d="M104.5,71.5 L505.5,71.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M505.5,71.5 L505.5,159.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M505.5,159.5 C506.55,155.72 507.45,152.48 508.5,148.7 C506.4,148.7 504.6,148.7 502.5,148.7 C503.55,152.48 504.45,155.72 505.5,159.5 C505.5,159.5 505.5,159.5 505.5,159.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M490.5,177.5 L490.5,258.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M490.5,258.5 C491.55,254.72 492.45,251.48 493.5,247.7 C491.4,247.7 489.6,247.7 487.5,247.7 C488.55,251.48 489.45,254.72 490.5,258.5 C490.5,258.5 490.5,258.5 490.5,258.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            <text id="parameters:-balance" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="474" y="272">parameters: balance</tspan>
+                <tspan x="474" y="286">body:</tspan>
+                <tspan x="474" y="300" font-family="Monaco" font-size="10">(let ((balance initial-amount))</tspan>
+                <tspan x="474" y="314" font-family="Monaco" font-size="10">  (lambda (amount)</tspan>
+                <tspan x="474" y="328" font-family="Monaco" font-size="10">    (if (&gt;= balance amount)</tspan>
+                <tspan x="474" y="342" font-family="Monaco" font-size="10">        (begin (set! balance (- balance amount))</tspan>
+                <tspan x="474" y="356" font-family="Monaco" font-size="10">               balance)</tspan>
+                <tspan x="474" y="370" font-family="Monaco" font-size="10">        “insufficient funds”)))</tspan>
+            </text>
+            <path d="M521.5,177.5 L613.5,177.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M613.5,177.5 L613.5,124.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M613.5,124.5 C612.45,128.28 611.55,131.52 610.5,135.3 C612.6,135.3 614.4,135.3 616.5,135.3 C615.45,131.52 614.55,128.28 613.5,124.5 C613.5,124.5 613.5,124.5 613.5,124.5 Z" stroke="#979797" stroke-linecap="square"></path>
+        </g>
+        <g id="(W1-50)" sketch:type="MSLayerGroup" transform="translate(35.000000, 633.000000)">
+            <rect id="Rectangle-2" stroke="#979797" sketch:type="MSShapeGroup" x="0" y="53" width="880" height="71"></rect>
+            <text id="global-env:" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="0" y="45">global env:</tspan>
+            </text>
+            <text id="Environments-created" sketch:type="MSTextLayer" font-family="Helvetica" font-size="18" font-weight="bold" fill="#000000">
+                <tspan x="0" y="18">Environments created by evaluating (W1 50)</tspan>
+            </text>
+            <text id="make-withdraw:" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="14" y="75">make-withdraw:</tspan>
+                <tspan x="14" y="89">W1:</tspan>
+            </text>
+            <path d="M57.5,85.5 L57.5,299.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M57.5,299.5 C58.55,295.72 59.45,292.48 60.5,288.7 C58.4,288.7 56.6,288.7 54.5,288.7 C55.55,292.48 56.45,295.72 57.5,299.5 C57.5,299.5 57.5,299.5 57.5,299.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M56.5,85.5 L42.5,85.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <g id="W1" transform="translate(26.000000, 273.000000)">
+                <g id="Cons" transform="translate(0.000000, 29.000000)" stroke="#979797" sketch:type="MSShapeGroup">
+                    <circle id="Oval-1" cx="16" cy="16" r="16"></circle>
+                    <circle id="Oval-1" fill="#9B9B9B" cx="16" cy="16" r="6"></circle>
+                    <circle id="Oval-1" cx="48" cy="16" r="16"></circle>
+                    <circle id="Oval-1" fill="#9B9B9B" cx="48" cy="16" r="6"></circle>
+                </g>
+                <path d="M229.5,44.5 L229.5,0.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M229.5,0.5 C228.45,4.28000005 227.55,7.52000009 226.5,11.3000001 C228.6,11.3 230.4,11.3 232.5,11.2999999 C231.45,7.51999991 230.55,4.27999995 229.5,0.5 C229.5,0.5 229.5,0.5 229.5,0.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M228.5,44.5 L46.5,44.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path d="M15.5,44.5 L15.5,95.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M15.5,95.5 C16.55,91.72 17.45,88.4800001 18.5,84.7000001 C16.4,84.7 14.6,84.7 12.5,84.6999999 C13.55,88.4799999 14.45,91.72 15.5,95.5 C15.5,95.5 15.5,95.5 15.5,95.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <text id="parameters:-amount" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="0" y="105">parameters: amount</tspan>
+                    <tspan x="0" y="119">body:</tspan>
+                    <tspan x="0" y="133" font-family="Monaco" font-size="10">(if (&gt;= balance amount)</tspan>
+                    <tspan x="0" y="147" font-family="Monaco" font-size="10">    (begin (set! balance (- balance amount))</tspan>
+                    <tspan x="0" y="161" font-family="Monaco" font-size="10">           balance)</tspan>
+                    <tspan x="0" y="175" font-family="Monaco" font-size="10">    “insufficient funds”)</tspan>
+                    <tspan x="150" y="175" font-family="Monaco" font-size="11"></tspan>
+                </text>
+            </g>
+            <g id="E1" transform="translate(184.000000, 125.000000)">
+                <text id="initial-amount:-100" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="58" y="63">initial-amount: 100</tspan>
+                </text>
+                <rect id="Rectangle-1" stroke="#979797" sketch:type="MSShapeGroup" x="48" y="44" width="119" height="30"></rect>
+                <text sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="0" y="62">E1</tspan>
+                </text>
+                <path d="M22.5,57.5 L41.5,57.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M41.5,57.5 C37.72,56.45 34.48,55.55 30.7,54.5 C30.7,56.6 30.7,58.4 30.7,60.5 C34.48,59.45 37.72,58.55 41.5,57.5 C41.5,57.5 41.5,57.5 41.5,57.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M71.5,44.5 L71.5,0.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M71.5,0.5 C70.45,4.28000005 69.55,7.52000009 68.5,11.3000001 C70.6,11.3 72.4,11.3 74.5,11.2999999 C73.45,7.51999991 72.55,4.27999995 71.5,0.5 C71.5,0.5 71.5,0.5 71.5,0.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            </g>
+            <g id="E2" transform="translate(184.000000, 199.000000)">
+                <text id="balance:-100-50" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="58" y="63">balance: </tspan>
+                    <tspan x="106.703125" y="63" text-decoration="line-through">100</tspan>
+                    <tspan x="126.724609" y="63"> 50</tspan>
+                </text>
+                <rect id="Rectangle-1" stroke="#979797" sketch:type="MSShapeGroup" x="48" y="44" width="119" height="30"></rect>
+                <text sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="0" y="62">E2</tspan>
+                </text>
+                <path d="M22.5,57.5 L41.5,57.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M41.5,57.5 C37.72,56.45 34.48,55.55 30.7,54.5 C30.7,56.6 30.7,58.4 30.7,60.5 C34.48,59.45 37.72,58.55 41.5,57.5 C41.5,57.5 41.5,57.5 41.5,57.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M71.5,44.5 L71.5,0.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M71.5,0.5 C70.45,4.28000005 69.55,7.52000009 68.5,11.3000001 C70.6,11.3 72.4,11.3 74.5,11.2999999 C73.45,7.51999991 72.55,4.27999995 71.5,0.5 C71.5,0.5 71.5,0.5 71.5,0.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            </g>
+            <path d="M104.5,71.5 L733.5,71.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M330.5,317.5 L330.5,273.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M330.5,273.5 C329.45,277.28 328.55,280.52 327.5,284.3 C329.6,284.3 331.4,284.3 333.5,284.3 C332.45,280.52 331.55,277.28 330.5,273.5 C330.5,273.5 330.5,273.5 330.5,273.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M734.5,71.5 L734.5,159.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M734.5,159.5 C735.55,155.72 736.45,152.48 737.5,148.7 C735.4,148.7 733.6,148.7 731.5,148.7 C732.55,152.48 733.45,155.72 734.5,159.5 C734.5,159.5 734.5,159.5 734.5,159.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            <g id="make-withdraw" transform="translate(705.000000, 125.000000)">
+                <g id="Cons" transform="translate(0.000000, 38.000000)" stroke="#979797" sketch:type="MSShapeGroup">
+                    <circle id="Oval-1" cx="16" cy="16" r="16"></circle>
+                    <circle id="Oval-1" fill="#9B9B9B" cx="16" cy="16" r="6"></circle>
+                    <circle id="Oval-1" cx="48" cy="16" r="16"></circle>
+                    <circle id="Oval-1" fill="#9B9B9B" cx="48" cy="16" r="6"></circle>
+                </g>
+                <path d="M16.5,53.5 L16.5,134.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M16.5,134.5 C17.55,130.72 18.45,127.48 19.5,123.7 C17.4,123.7 15.6,123.7 13.5,123.7 C14.55,127.48 15.45,130.72 16.5,134.5 C16.5,134.5 16.5,134.5 16.5,134.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <text id="parameters:-balance" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="0" y="148">parameters: balance</tspan>
+                    <tspan x="0" y="162">body:</tspan>
+                    <tspan x="0" y="176" font-family="Monaco" font-size="10">(let ((balance initial-amount))</tspan>
+                    <tspan x="0" y="190" font-family="Monaco" font-size="10">  (lambda (amount)</tspan>
+                    <tspan x="0" y="204" font-family="Monaco" font-size="10">    (if (&gt;= balance amount)</tspan>
+                    <tspan x="0" y="218" font-family="Monaco" font-size="10">        (begin (set! balance (- balance amount))</tspan>
+                    <tspan x="0" y="232" font-family="Monaco" font-size="10">               balance)</tspan>
+                    <tspan x="0" y="246" font-family="Monaco" font-size="10">        “insufficient funds”)))</tspan>
+                </text>
+                <path d="M47.5,53.5 L139.5,53.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path d="M139.5,53.5 L139.5,0.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M139.5,0.5 C138.45,4.28000005 137.55,7.52000009 136.5,11.3000001 C138.6,11.3 140.4,11.3 142.5,11.2999999 C141.45,7.51999991 140.55,4.27999995 139.5,0.5 C139.5,0.5 139.5,0.5 139.5,0.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            </g>
+            <path d="M330.5,318.5 L384.5,318.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <text id="amount:-50" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="395" y="323">amount: 50</tspan>
+            </text>
+            <rect id="Rectangle-1" stroke="#979797" sketch:type="MSShapeGroup" x="385" y="304" width="119" height="30"></rect>
+            <text id="(if-(>=-balance-amou" sketch:type="MSTextLayer" font-family="Monaco" font-size="10" font-weight="normal" fill="#000000">
+                <tspan x="385" y="347">(if (&gt;= balance amount)</tspan>
+                <tspan x="385" y="361">    (begin (set! balance (- balance amount))</tspan>
+                <tspan x="385" y="375">           balance)</tspan>
+                <tspan x="385" y="389">    “insufficient funds”)</tspan>
+                <tspan x="535" y="389" font-size="11"></tspan>
+            </text>
+        </g>
+        <g id="define-W2" sketch:type="MSLayerGroup" transform="translate(24.000000, 1230.000000)">
+            <rect id="Rectangle-2" stroke="#979797" sketch:type="MSShapeGroup" x="0" y="53" width="880" height="71"></rect>
+            <text id="global-env:" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="0" y="45">global env:</tspan>
+            </text>
+            <text id="Environments-created" sketch:type="MSTextLayer" font-family="Helvetica" font-size="18" font-weight="bold" fill="#000000">
+                <tspan x="0" y="18">Environments created by evaluating (define W2 (make-withdraw 100)) to create a second account</tspan>
+            </text>
+            <text id="make-withdraw:" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="14" y="75">make-withdraw:</tspan>
+                <tspan x="14" y="89">W2:</tspan>
+                <tspan x="14" y="103">W1:</tspan>
+            </text>
+            <path d="M57.5,99.5 L57.5,299.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M57.5,299.5 C58.55,295.72 59.45,292.48 60.5,288.7 C58.4,288.7 56.6,288.7 54.5,288.7 C55.55,292.48 56.45,295.72 57.5,299.5 C57.5,299.5 57.5,299.5 57.5,299.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M56.5,99.5 L42.5,99.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <g id="W1" transform="translate(26.000000, 273.000000)">
+                <g id="Cons" transform="translate(0.000000, 29.000000)" stroke="#979797" sketch:type="MSShapeGroup">
+                    <circle id="Oval-1" cx="16" cy="16" r="16"></circle>
+                    <circle id="Oval-1" fill="#9B9B9B" cx="16" cy="16" r="6"></circle>
+                    <circle id="Oval-1" cx="48" cy="16" r="16"></circle>
+                    <circle id="Oval-1" fill="#9B9B9B" cx="48" cy="16" r="6"></circle>
+                </g>
+                <path d="M229.5,44.5 L229.5,0.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M229.5,0.5 C228.45,4.28000005 227.55,7.52000009 226.5,11.3000001 C228.6,11.3 230.4,11.3 232.5,11.2999999 C231.45,7.51999991 230.55,4.27999995 229.5,0.5 C229.5,0.5 229.5,0.5 229.5,0.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M228.5,44.5 L46.5,44.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path d="M15.5,44.5 L15.5,95.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M15.5,95.5 C16.55,91.72 17.45,88.4800001 18.5,84.7000001 C16.4,84.7 14.6,84.7 12.5,84.6999999 C13.55,88.4799999 14.45,91.72 15.5,95.5 C15.5,95.5 15.5,95.5 15.5,95.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <text id="parameters:-amount" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="0" y="105">parameters: amount</tspan>
+                    <tspan x="0" y="119">body:</tspan>
+                    <tspan x="0" y="133" font-family="Monaco" font-size="10">(if (&gt;= balance amount)</tspan>
+                    <tspan x="0" y="147" font-family="Monaco" font-size="10">    (begin (set! balance (- balance amount))</tspan>
+                    <tspan x="0" y="161" font-family="Monaco" font-size="10">           balance)</tspan>
+                    <tspan x="0" y="175" font-family="Monaco" font-size="10">    “insufficient funds”)</tspan>
+                    <tspan x="150" y="175" font-family="Monaco" font-size="11"></tspan>
+                </text>
+            </g>
+            <g id="E1" transform="translate(184.000000, 125.000000)">
+                <text id="initial-amount:-100" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="58" y="63">initial-amount: 100</tspan>
+                </text>
+                <rect id="Rectangle-1" stroke="#979797" sketch:type="MSShapeGroup" x="48" y="44" width="119" height="30"></rect>
+                <text sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="0" y="62">E1</tspan>
+                </text>
+                <path d="M22.5,57.5 L41.5,57.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M41.5,57.5 C37.72,56.45 34.48,55.55 30.7,54.5 C30.7,56.6 30.7,58.4 30.7,60.5 C34.48,59.45 37.72,58.55 41.5,57.5 C41.5,57.5 41.5,57.5 41.5,57.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M71.5,44.5 L71.5,0.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M71.5,0.5 C70.45,4.28000005 69.55,7.52000009 68.5,11.3000001 C70.6,11.3 72.4,11.3 74.5,11.2999999 C73.45,7.51999991 72.55,4.27999995 71.5,0.5 C71.5,0.5 71.5,0.5 71.5,0.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            </g>
+            <g id="E2" transform="translate(184.000000, 199.000000)">
+                <text id="balance:-50" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="58" y="63">balance: 50</tspan>
+                </text>
+                <rect id="Rectangle-1" stroke="#979797" sketch:type="MSShapeGroup" x="48" y="44" width="119" height="30"></rect>
+                <text sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="0" y="62">E2</tspan>
+                </text>
+                <path d="M22.5,57.5 L41.5,57.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M41.5,57.5 C37.72,56.45 34.48,55.55 30.7,54.5 C30.7,56.6 30.7,58.4 30.7,60.5 C34.48,59.45 37.72,58.55 41.5,57.5 C41.5,57.5 41.5,57.5 41.5,57.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <path d="M71.5,44.5 L71.5,0.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M71.5,0.5 C70.45,4.28000005 69.55,7.52000009 68.5,11.3000001 C70.6,11.3 72.4,11.3 74.5,11.2999999 C73.45,7.51999991 72.55,4.27999995 71.5,0.5 C71.5,0.5 71.5,0.5 71.5,0.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            </g>
+            <path d="M104.5,71.5 L784.5,71.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path d="M784.5,71.5 L784.5,161.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M784.5,161.5 C785.55,157.72 786.45,154.48 787.5,150.7 C785.4,150.7 783.6,150.7 781.5,150.7 C782.55,154.48 783.45,157.72 784.5,161.5 C784.5,161.5 784.5,161.5 784.5,161.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            <g id="make-withdraw" transform="translate(752.000000, 124.000000)">
+                <g id="Cons" transform="translate(0.000000, 39.000000)" stroke="#979797" sketch:type="MSShapeGroup">
+                    <circle id="Oval-1" cx="16" cy="16" r="16"></circle>
+                    <circle id="Oval-1" fill="#9B9B9B" cx="16" cy="16" r="6"></circle>
+                    <circle id="Oval-1" cx="48" cy="16" r="16"></circle>
+                    <circle id="Oval-1" fill="#9B9B9B" cx="48" cy="16" r="6"></circle>
+                </g>
+                <path d="M16.5,54.5 L16.5,135.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M16.5,135.5 C17.55,131.72 18.45,128.48 19.5,124.7 C17.4,124.7 15.6,124.7 13.5,124.7 C14.55,128.48 15.45,131.72 16.5,135.5 C16.5,135.5 16.5,135.5 16.5,135.5 Z" stroke="#979797" stroke-linecap="square"></path>
+                <text id="parameters:-balance" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                    <tspan x="0" y="149">parameters: balance</tspan>
+                    <tspan x="0" y="163">body:</tspan>
+                    <tspan x="0" y="177" font-family="Monaco" font-size="10">(let ((balance initial-amount))</tspan>
+                    <tspan x="0" y="191" font-family="Monaco" font-size="10">  (lambda (amount)</tspan>
+                    <tspan x="0" y="205" font-family="Monaco" font-size="10">    (if (&gt;= balance amount)</tspan>
+                    <tspan x="0" y="219" font-family="Monaco" font-size="10">        (begin (set! balance (- balance amount))</tspan>
+                    <tspan x="0" y="233" font-family="Monaco" font-size="10">               balance)</tspan>
+                    <tspan x="0" y="247" font-family="Monaco" font-size="10">        “insufficient funds”)))</tspan>
+                </text>
+                <path d="M47.5,54.5 L108.5,54.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path d="M109.5,53.5 L109.5,0.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+                <path id="Line-decoration-1" d="M109.5,0.5 C108.45,4.28000005 107.55,7.52000009 106.5,11.3000001 C108.6,11.3 110.4,11.3 112.5,11.2999999 C111.45,7.51999991 110.55,4.27999995 109.5,0.5 C109.5,0.5 109.5,0.5 109.5,0.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            </g>
+        </g>
+        <path d="M66.5,1315.5 L452.5,1315.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M452.5,1315.5 L452.5,1530.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path id="Line-decoration-1" d="M452.5,1530.5 C453.55,1526.72 454.45,1523.48 455.5,1519.7 C453.4,1519.7 451.6,1519.7 449.5,1519.7 C450.55,1523.48 451.45,1526.72 452.5,1530.5 C452.5,1530.5 452.5,1530.5 452.5,1530.5 Z" stroke="#979797" stroke-linecap="square"></path>
+        <g id="W2" sketch:type="MSLayerGroup" transform="translate(422.000000, 1502.000000)" stroke="#979797">
+            <g id="Cons" transform="translate(0.000000, 30.000000)" sketch:type="MSShapeGroup">
+                <circle id="Oval-1" cx="16" cy="16" r="16"></circle>
+                <circle id="Oval-1" fill="#9B9B9B" cx="16" cy="16" r="6"></circle>
+                <circle id="Oval-1" cx="48" cy="16" r="16"></circle>
+                <circle id="Oval-1" fill="#9B9B9B" cx="48" cy="16" r="6"></circle>
+            </g>
+            <path d="M183.5,44.5 L183.5,0.5" id="Line" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M183.5,0.5 C182.45,4.28000005 181.55,7.52000009 180.5,11.3000001 C182.6,11.3 184.4,11.3 186.5,11.2999999 C185.45,7.51999991 184.55,4.27999995 183.5,0.5 C183.5,0.5 183.5,0.5 183.5,0.5 Z" stroke-linecap="square"></path>
+            <path d="M183.5,45.5 L46.5,45.5" id="Line" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        </g>
+        <path d="M79.5,1579.5 L79.5,1598.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path id="Line-decoration-1" d="M79.5,1598.5 C80.55,1594.72 81.45,1591.48 82.5,1587.7 C80.4,1587.7 78.6,1587.7 76.5,1587.7 C77.55,1591.48 78.45,1594.72 79.5,1598.5 C79.5,1598.5 79.5,1598.5 79.5,1598.5 Z" stroke="#979797" stroke-linecap="square"></path>
+        <path d="M80.5,1579.5 L438.5,1579.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <path d="M438.5,1579.5 L438.5,1548.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+        <g id="E1" sketch:type="MSLayerGroup" transform="translate(534.000000, 1353.000000)">
+            <text id="initial-amount:-100" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="58" y="63">initial-amount: 100</tspan>
+            </text>
+            <rect id="Rectangle-1" stroke="#979797" sketch:type="MSShapeGroup" x="48" y="44" width="119" height="30"></rect>
+            <text id="E3" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="0" y="62">E3</tspan>
+            </text>
+            <path d="M22.5,57.5 L41.5,57.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M41.5,57.5 C37.72,56.45 34.48,55.55 30.7,54.5 C30.7,56.6 30.7,58.4 30.7,60.5 C34.48,59.45 37.72,58.55 41.5,57.5 C41.5,57.5 41.5,57.5 41.5,57.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M71.5,44.5 L71.5,0.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M71.5,0.5 C70.45,4.28000005 69.55,7.52000009 68.5,11.3000001 C70.6,11.3 72.4,11.3 74.5,11.2999999 C73.45,7.51999991 72.55,4.27999995 71.5,0.5 C71.5,0.5 71.5,0.5 71.5,0.5 Z" stroke="#979797" stroke-linecap="square"></path>
+        </g>
+        <g id="E2" sketch:type="MSLayerGroup" transform="translate(534.000000, 1427.000000)">
+            <text id="balance:-100" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="58" y="63">balance: 100</tspan>
+            </text>
+            <rect id="Rectangle-1" stroke="#979797" sketch:type="MSShapeGroup" x="48" y="44" width="119" height="30"></rect>
+            <text id="E4" sketch:type="MSTextLayer" font-family="Helvetica" font-size="12" font-weight="normal" fill="#000000">
+                <tspan x="0" y="62">E4</tspan>
+            </text>
+            <path d="M22.5,57.5 L41.5,57.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M41.5,57.5 C37.72,56.45 34.48,55.55 30.7,54.5 C30.7,56.6 30.7,58.4 30.7,60.5 C34.48,59.45 37.72,58.55 41.5,57.5 C41.5,57.5 41.5,57.5 41.5,57.5 Z" stroke="#979797" stroke-linecap="square"></path>
+            <path d="M71.5,44.5 L71.5,0.5" id="Line" stroke="#979797" stroke-linecap="square" sketch:type="MSShapeGroup"></path>
+            <path id="Line-decoration-1" d="M71.5,0.5 C70.45,4.28000005 69.55,7.52000009 68.5,11.3000001 C70.6,11.3 72.4,11.3 74.5,11.2999999 C73.45,7.51999991 72.55,4.27999995 71.5,0.5 C71.5,0.5 71.5,0.5 71.5,0.5 Z" stroke="#979797" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>
