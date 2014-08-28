@@ -1,0 +1,24 @@
+In general, mystery produces a reversed version of a list, destroying the original list in the process.
+
+initial value of v:
+
+  a|-> b|-> c|-> d|/
+
+after evaluating (define w (mystery v)):
+
+v:
+
+  a|/
+
+w:
+
+  d|-> c|-> b|-> a|/
+
+At a repl:
+
+> (define v ‘(a b c d))
+> (define w (mystery v))
+> v
+(a)
+> w
+(d c b a)
