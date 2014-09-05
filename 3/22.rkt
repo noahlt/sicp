@@ -1,0 +1,73 @@
+#lang r5rs
+
+(define (make-queue)
+  (let ((front-ptr '())
+        (rear-ptr '()))
+    (define (empty-queue?)
+      (null? front-ptr))
+    (define (insert-queue x)
+      (let ((new-tail (cons x '())))
+        (cond ((empty-queue?)
+               (set! front-ptr new-tail)
+               (set! rear-ptr new-tail)
+               dispatch)
+              (else
+               (set-cdr! rear-ptr new-tail)
+               (set! rear-ptr new-tail)))))
+    (define (delete-queue)
+      (if (not (empty-queue?))
+          (begin (set! front-ptr (cdr front-ptr))
+                 dispatch)
+          'error))
+    (define (print-queue)
+      (display "queue: ")
+      (display front-ptr)
+      (display "\n"))
+    (define (dispatch m)
+      (cond ((eq? m 'empty-queue?) (empty-queue?))
+            ((eq? m 'front-queue)
+             (if (empty-queue?)
+                 '()
+                 (car front-ptr)))
+            ((eq? m 'insert-queue!) insert-queue)
+            ((eq? m 'delete-queue!) (delete-queue))
+            ((eq? m 'print-queue) (print-queue))
+            (else 'error)))
+    dispatch))
+
+(define q (make-queue))
+(q 'print-queue)
+(display "empty queue? ")
+(display (q 'empty-queue?))
+(display "\n")
+
+((q 'insert-queue!) 'a)
+(q 'print-queue)
+(display "empty queue? ")
+(display (q 'empty-queue?))
+(display "\n")
+
+((q 'insert-queue!) 'b)
+(q 'print-queue)
+
+((q 'insert-queue!) 'c)
+(q 'print-queue)
+
+(display (q 'front-queue))
+(display "\n")
+
+(q 'delete-queue!)
+(q 'print-queue)
+
+(q 'delete-queue!)
+(q 'print-queue)
+
+(q 'delete-queue!)
+(q 'print-queue)
+
+(q 'delete-queue!)
+(q 'print-queue)
+
+(display (q 'front-queue))
+(display "\n")
+(q 'print-queue)
