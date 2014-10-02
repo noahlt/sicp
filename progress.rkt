@@ -4,7 +4,7 @@
   ; each row takes the form (chapter completed total)
   '((1 46 46)
     (2 72 97)
-    (3 0 82)
+    (3 23 82)
     (4 0 79)
     (5 0 52)))
 
