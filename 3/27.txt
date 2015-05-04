@@ -1,0 +1,5 @@
+I don’t feel like drawing another environment diagram.
+
+Assuming we use the definition of lookup from pg 268, lookup is O(n) where n is the number of entries in the table, since lookup linearly scans the table.  (In fact, since lookup just naively appends new values to the end of its table, lookup called by memo-fib will tend to run in the worst case, n steps.)  We could improve this by using a table backed by a binary tree, such as the one we implemented in 3.26.
+
+We can’t just (define memo-fib (memoize fib)) because fib is recursive.  (memoize fib) will return memoized results when its argument has been memoized, but when the argument has not been memoized it will call the non-memoized fib function.  So we have to define memo-fib with recursive calls to memo-fib.

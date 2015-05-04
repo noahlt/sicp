@@ -1,0 +1,11 @@
+Changing the inputs from 0,1 to 1,0 takes two set-value! operations:
+
+  initial value: 0,1
+   first set op: 1,1
+  second set op: 1,0
+
+The problem is that our implementations of the logic gates computes the new output value using the inputs at the time the input signal was changed, rather than the inputs at the time that the output signal will be changed.
+
+So if you use a stack-based LIFO ordering of operations, first the output of this and-gate will be set to 0 (based on the inputs of 1,0), and subsequently the output will be set to 1 (based on the inputs of 1,1).  So the final operation to set the output of the and-gate will be calculating using the inputs at an intermediate state.
+
+But if we use a queue-based FIFO ordering of operations, the final operation will calculate using the inputs at the final state after all the input changes have already been made.  First the output of this and-gate will be set to 1 (based on the inputs of (1,1), and finally the output will be set to 0 (based on inputs of 1,0).

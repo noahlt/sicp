@@ -1,0 +1,72 @@
+#lang r5rs
+
+(define true #t)
+(define false #f)
+
+(define (show x)
+  (display x)
+  (display "\n"))
+
+(define (get-key table-node)
+  (caar table-node))
+(define (get-value table-node)
+  (cdar table-node))
+(define (get-left table-node)
+  (cadr table-node))
+(define (get-right table-node)
+  (cddr table-node))
+
+(define (set-value! table-node value)
+  (set-cdr! (car table-node) value))
+(define (set-left! table-node new-left)
+  (set-car! (cdr table-node) new-left))
+(define (set-right! table-node new-right)
+  (set-cdr! (cdr table-node) new-right))
+
+(define (make-table-node key value)
+  (cons (cons key value) (cons '() '())))
+
+(define (make-table)
+  (let ((local-table (list)))
+    (define (lookup key)
+      (define (lookup-helper table)
+        (if (null? table)
+            false
+            (cond ((string=? key (get-key table))
+                   (get-value table))
+                  ((string<? key (get-key table))
+                   (lookup-helper (get-left table)))
+                  ((string>? key (get-key table))
+                   (lookup-helper (get-right table))))))
+      (lookup-helper local-table))
+    (define (insert! key value)
+      (define (insert-helper table)
+        (cond ((string=? key (get-key table))
+               (set-value! table value))
+              ((string<? key (get-key table))
+               (set-left! table (make-table-node key value)))
+              ((string>? key (get-key table))
+               (set-right! table (make-table-node key value)))))
+      (if (null? local-table)
+          (set! local-table (make-table-node key value))
+          (insert-helper local-table)))
+    (define (dispatch m)
+      (cond ((eq? m 'lookup) lookup)
+            ((eq? m 'insert!) insert!)
+            (else 'error)))
+    dispatch))
+
+(define t (make-table))
+(show ((t 'lookup) "b"))
+
+((t 'insert!) "b" 1)
+(show ((t 'lookup) "b"))
+
+((t 'insert!) "a" 2)
+(show ((t 'lookup) "a"))
+
+((t 'insert!) "c" 3)
+(show ((t 'lookup) "c"))
+
+((t 'insert!) "b" 100)
+(show ((t 'lookup) "b"))

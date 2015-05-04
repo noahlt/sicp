@@ -1,0 +1,14 @@
+The delay will be equal to the sum of the delays of n full-adders, since we need to wait for the carry bit to propagate through each full-adder.
+
+ripple-carry adder delay (with n-bit numbers) = n * (full adder delay)
+
+full adder delay = 2*(half adder delay) + (or gate delay)
+
+half adder delay = 2*(and gate delay) + (inverter delay)
+
+full adder delay = 4*(and gate delay) + 2*(inverter delay) + (or gate delay)
+
+ripple-carry adder delay (with n-bit numbers) = 
+    4*n*(and gate delay) + 2*n*(inverter delay) + n*(or gate delay)
+
+(for half adder delay, I used the longest path through the half adder, through the and-gate and inverter and and-gate.  If the or-gate delay is longer than the combined delays of an and-gate and inverter, as it would be if the or-gate were implemented with and-gates and inverters (cf 3.29), then my calculation is incorrect and we should instead use the sum of the delays of an or-gate and and-gate.)
