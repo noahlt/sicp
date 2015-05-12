@@ -1,0 +1,10 @@
+mutex		p1		p2
+false
+		get: false
+				get: false
+		set: true
+true
+				set: true
+true
+
+Now both p1 and p2 believe they have acquired the lock, and will proceed to execute their procedures.

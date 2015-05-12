@@ -1,0 +1,23 @@
+(define x 10)
+(parallel-execute (lambda () (set! x (* x x)))
+                  (lambda () (set! x (* x x x))))
+
+100  ; p2 clobbered by p1
+1000 ; p1 clobbered by p2
+10000 ; first two gets in p2 get 10, last one gets 100
+      ; -OR- one get in p1 gets 1000 and the other gets 10
+100000 ; first get in p2 gets 10, last two get 100
+1000000 ; all three gets in p2 get 100 -OR- both gets in p1 get 1000
+
+
+
+(define x 10)
+(define s (make-serializer))
+(parallel-execute (s (lambda () (set! x (* x x))))
+                  (s (lambda () (set! x (* x x x)))))
+
+With this serialization, either p1 will square 1000 or p2 will cube 100.
+You get the same answer in both cases, because exponentiation is commutative:
+
+1000000
+

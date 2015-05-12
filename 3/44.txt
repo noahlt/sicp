@@ -1,0 +1,15 @@
+(define (transfer from-account to-account amount)
+  ((from-account 'withdraw) amount)
+  ((to-account 'deposit) amount))
+
+This transfer procedure does not require the sophisticated serialization
+we had to do with the balance swap procedure.  The account swap procedure
+had to set new balances as a function of old balances to the same accounts,
+and errors in the procedure occurred when one process set a new value in
+between another process' reading and writing values.  But the transfer
+procedure withdraws from one account and deposits to another account.  Since
+it never sets a balance which was calculated as a function of an old balance
+to the same account, there is no possibility of another procedure causing
+an error by setting a new balance after the transfer procedure has performed
+its read operation.
+

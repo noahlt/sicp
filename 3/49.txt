@@ -1,0 +1,20 @@
+Imagine a procedure which, given a set of bank accounts and a starting bank account, tries to swap the balance of the account with the other account with the lowest balance.  Like so:
+
+(define (serialized-weird-exchange account1 all-accounts)
+  (define (find-lowest-account remaining-accounts lowest-account-so-far)
+    (let ((next-account (car remaining-accounts))
+          (other-accounts (cdr remaining-accounts)))
+      (cond ((null? remaining-accounts)
+             lowest-account-so-far)
+            ((null? lowest-account-so-far)
+             (find-lowest-account other-accounts next-account))
+            (else
+             (if (< (next-account ‘balance) (lowest-account-so-far ‘balance))
+                 (find-lowest-account other-accounts next-account))
+                 (find-lowest-account other-accounts lowest-account-so-far))))))
+  (let ((account2 (find-lowest-account (remove all-accounts account1)))
+        (serializer1 (account1 ‘serializer))
+        (serializer2 (account2 ‘serializer)))
+    ((serializer1 (serializer2 exchange)) account1 account2)))
+
+If the accounts are $10, $20, and $30, and one process is passed the $10 account and another process is passed the $20 account, then the two processes will be in deadlock, since the first will be trying to acquire the lock on the $20 account and the second will block on trying to acquire the lock on the $10 account.

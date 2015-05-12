@@ -1,0 +1,48 @@
+If the balance swaps are run sequentially, then there is no possibility
+of errors arising from concurrency, so after each swap between accounts
+with balances X and Y there will still be one account with balance X and
+another account with balance Y.  Therefore, no matter how many swaps performed
+between accounts with $10, $20, and $30, as long as the swaps are run
+sequentially, ultimately the accounts will still have balances of $10, $20,
+and $30, in some order.
+
+If the balance swaps are run concurrently with the original (non-serialized)
+implementation, this will not always hold true, because an account balance
+might be changed between a swap procedure reading and writing to the account,
+as demonstrated in the following table:
+
+balance 1	balance 2	balance 3	swap 1		swap 2
+10		20		30
+						get1 10
+						get2 20
+						calc 20-10=10
+								get2 30
+								get1 20
+								calc 30-20=10
+						with2:10
+		10
+						dep1:10
+20
+								with2:10
+		0
+								dep3:10
+				40
+
+As shown in this example, where the ultimate balances are 20, 0, and 40,
+concurrent swaps using the non-serialized exchange procedure violates the
+expectation that the balances will be maintained.
+
+However, the total amount across all three accounts is maintained, even
+in the cases with concurrency errors!  This is because instead of setting
+the balance of one account to another, our implementation always withdraws
+from one account and deposits to another account, by the same amount. It
+never deposits into one account more than it withdraws from the other account,
+this it conserves the total balance across all three accounts.
+
+This conservation of total balance only works because we have serialized
+the implementations of withdraw and deposit.  Those procedures are implemented
+by getting the existing balance, calculating a new balance, then setting the
+new balance.  If these operations got mixed up with the setting operations
+of other processes, the total balance might not be conserved.
+
+

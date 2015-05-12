@@ -1,0 +1,14 @@
+Ben is wrong.  The procedure he serialized is defined as:
+
+    (lambda () balance)
+
+It only has one operation: looking up the value of balance.  The class
+of error that serialization eliminates is that of the different operations
+across procedures being inteleaved.  When there's only one operation in
+a procedure, other procedure's operations cannot possibly be inteleaved
+within its operations, since there is only one.  So serializing a single
+operation has no effect.
+
+(Nice try, though.  I had the same thought when I first saw the serialized
+version of make-account.)
+

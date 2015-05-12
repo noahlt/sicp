@@ -1,0 +1,7 @@
+This new serialization still allows interleaving between the setting
+of the squared value and the incremented value.  So you could still have:
+
+101: P1 squares 10 to 100, P1 sets x to 100, P2 sets x to 101
+100: P1 squares 10 to 100, P2 sets x to 101, P1 sets x to 100
+121: P2 sets x to 11, P1 squares 11 to 121, P1 sets x to 121
+

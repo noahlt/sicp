@@ -1,0 +1,130 @@
+; Initial condition:
+(set! balance 100)
+; Operations:
+(set! balance (+ balance 10))             ; p1
+(set! balance (- balance 20))             ; p2
+(set! balance (- balance (/ balance 2)))  ; p3
+
+a. Possible future values, with the arithmetic written out (in left-to-right
+   order of operations):
+
+100 + 10 - 20 / 2 = 45
+100 - 20 + 10 / 2 = 45
+100 + 10 / 2 - 20 = 35
+100 - 20 / 2 + 10 = 50
+100 / 2 + 10 - 20 = 40
+100 / 2 - 20 + 10 = 40
+
+35, 40, 45, 50
+  
+b. If the processes can be interleaved, then the operation which withdraws
+   half of the balance can cause an error between the two variable lookups.
+
+Here's the obvious, straightforward case, illustrating the first possible
+outcome listed above:
+
+balance		p1		p2		p3
+100
+		get: 100
+		new: 100+10=110
+		set: 110
+110
+				get: 110
+				new: 110-20=90
+				set: 90
+90
+						get: 90
+						calc: 90/2 = 45
+						get: 90
+						calc: 90-45=45
+						set: 45
+45
+
+The difference between parts (b) and (a) is that now in part (b) operations
+can be interrupted, like so:
+
+balance		p1		p2		p3
+100
+		get: 100
+		new: 100+10=110
+				get: 100
+				new: 100-20=80
+				set: 90
+		set: 110
+110
+						get: 110
+						calc: 110/2=55
+						get: 110
+						calc: 110-55=55
+						set: 55
+55
+
+So, if an entire operation happens inside of another operation (as here p2
+happened entirely within p1), it can ultimately have no effect (as here p2
+had no impact on the final value of balance).
+
+The processes could also be inteleaved, as illustrated in the text:
+
+balance		p1		p2		p3
+100
+		get: 100
+		new: 100+10=110
+				get: 100
+				new: 100-20=80
+		set: 110
+110
+				set: 80
+80
+						get: 80
+						calc: 80/2=40
+						get: 80
+						calc: 80-40=40
+						set: 40
+40
+
+So, if only the set operation happens during another process (as here p1's
+set occurs during p2's process) that operation can be lost.
+
+A new type of error occurs in this example, due to the implementation
+of p3 which uses two get operations: the value might change in between
+the two lookups, like so:
+
+balance		p1		p2		p3
+100
+		get: 100
+		new: 100+10=110
+		set: 110
+110
+				get: 110
+				new: 100-20=80
+						get: 110
+						calc: 110/2=55
+				set: 80
+80
+						get: 80
+						calc: 80-55=25
+						set: 25
+25
+
+And you can imagine more convoluted errors if, say, the computer just
+did a round robin on operations from each procedure:
+
+balance		p1		p2		p3
+100
+		get: 100
+				get: 100
+						get: 100
+		new: 100+10=110
+				new: 100-20=80
+						calc: 100/2=50
+		set: 110
+110
+				set: 80
+80
+						get: 80
+						calc: 80-50=30
+						set: 25
+25
+
+There are a lot of errors that could happen.
+

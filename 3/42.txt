@@ -1,0 +1,7 @@
+This time, Ben is right.  Since we're using the same serializer object,
+it will add any new calls to the pool of procedures it has to execute in
+series.
+
+(Although it's hard to know without looking at the implementation of
+make-serializer. Maybe in some weird implementation this might not be safe.)
+
