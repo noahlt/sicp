@@ -1,0 +1,14 @@
+I don’t want to draw another environment diagram, but the gist is:
+
+for-each-except is evaluated in the following stack of contexts:
+
+  set-my-value (local scope)
+    vars: newval, setter
+  context created by let in make-connector
+    vars from args: value, informant, constraints
+  context of call to make-connector
+    vars from args: none
+    vars from local defines: set-my-value, forget-my-value, connect, me
+  global context:
+    inform-about-value, forget-about-value, constant, probe, make-connector, etc.
+  
