@@ -1,0 +1,29 @@
+(define (expand num den radix)
+  (cons-stream
+    (quotient (* num radix) den)
+    (expand (remainder (* num radix) den) den radix)))
+
+Below is a table of successive calls to expand, starting with the initial call and followed by calls from the cdr position of cons-stream.  The right column is the value produced in the stream (the value passed to the car position of cons-stream) for that call to expand:
+
+Successive calls   Value in
+to expand          stream
+
+(expand 1 7 10) -> 1
+(expand 3 7 10) -> 4
+(expand 2 7 10) -> 2
+(expand 6 7 10) -> 8
+(expand 4 7 10) -> 5
+
+And the same for the other provide expression:
+
+Successive calls   Value in
+to expand          stream
+
+(expand 3 8 10) -> 3
+(expand 6 8 10) -> 7
+(expand 4 8 10) -> 5
+(expand 0 8 10) -> 0
+(expand 0 8 10) -> 0
+
+This stream produces the positional approximation in the given radix of a division between two integers.
+
