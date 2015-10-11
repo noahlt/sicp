@@ -1,5 +1,7 @@
 #lang racket
 
+
+
 ;;; general utilities
 
 (define (incr n) (+ n 1))
@@ -116,38 +118,27 @@
 
 (define ones (stream-cons 1 ones))
 
-;;; (from exercise 59)
+;;; pairs
 
-(define (integrate-series s)
-  (div-streams s counting-numbers))
+(define (interleave s1 s2)
+  (if (stream-null? s1)
+      s2
+      (stream-cons (stream-car s1)
+                   (interleave s2 (stream-cdr s1)))))
 
-(define exp-series
-  (stream-cons 1 (integrate-series exp-series)))
+(define (pairs s t)
+  (stream-cons
+   (list (stream-car s) (stream-car t))
+   (interleave
+    (stream-map (lambda (x) (list (stream-car s) x))
+                (stream-cdr t))
+    (pairs (stream-cdr s) (stream-cdr t)))))
 
-(define cos-series
-  (stream-cons 1 (negate-stream (integrate-series sin-series))))
+; exercise 3.66
 
-(define sin-series
-  (stream-cons 0 (integrate-series cos-series)))
+(display-stream (stream-take 25 (pairs integers integers)))
 
-;;; (from exercise 60)
-
-(define (mul-series s1 s2)
-  (stream-cons (* (stream-car s1) (stream-car s2))
-               (add-streams (scale-stream (stream-car s1)
-                                          (stream-cdr s2))
-                            (mul-series (stream-cdr s1)
-                                        s2))))
-;;; exercise 61
-
-(define (invert-unit-series S)
-  (stream-cons 1
-               (negate-stream (mul-series (stream-cdr S)
-                                          (invert-unit-series S)))))
-
-(define (d s)
-  (display-stream (stream-take 5 s)))
-
-(d cos-series)
-(d (invert-unit-series cos-series))
-(d (mul-series cos-series (invert-unit-series cos-series)))
+; Every other pair has 0 as its first element. (1/2 of all pairs)
+; Of the others, every other pair has 1 as its first element. (1/4 of all pairs)
+; Of the others, every other pair has 2 as its first element. (1/8 of all pairs)
+; This is due to the way pairs uses interleave to compose together the streams.

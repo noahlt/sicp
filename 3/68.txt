@@ -1,0 +1,11 @@
+Louis wants to rewrite pairs like so:
+
+(define (pairs s t)
+  (interleave
+   (stream-map (lambda (x) (list (stream-car s) x))
+               t)
+   (pairs (stream-cdr s) (stream-cdr t))))
+
+This won’t work, because programs which call this implementation of pairs will never terminate.
+
+It is important that the recursive call to pairs occurs in the cdr position of the call to stream-cons: that expression’s evaluation is delayed.  Without calling stream-cons in pairs, no subexpression’s evaluation is delayed; they are all evaluated immediately, including the recursive call to pairs, which leads to infinite recursion.

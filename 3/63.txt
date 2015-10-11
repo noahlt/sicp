@@ -1,0 +1,3 @@
+Every time we call sqrt-stream, we create a new stream.  So Louis’ version of sqrt-stream creates a new stream for every ‘iteration’, or element in the stream.  To get the nth iteration it will create n streams, each of which maps sqrt-improve over its elements.  So Louis’ implementation runs in O(n^2) time.
+
+The two versions will still not differ in efficiency if our implementation of delay does not memoize calls, because the efficiency gain comes from re-using already-computed iterations (previous elements in the stream), which are only saved with the memoizing optimization.

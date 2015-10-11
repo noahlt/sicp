@@ -116,38 +116,31 @@
 
 (define ones (stream-cons 1 ones))
 
-;;; (from exercise 59)
+;;; exercise 3.65
 
-(define (integrate-series s)
-  (div-streams s counting-numbers))
+(define (partial-sums s)
+  (add-streams s
+               (stream-cons 0
+                            (partial-sums s))))
 
-(define exp-series
-  (stream-cons 1 (integrate-series exp-series)))
+(define (negate-alternating s)
+  (let ((s0 (stream-ref s 0))
+        (s1 (stream-ref s 1))
+        (sn (stream-cdr (stream-cdr s))))
+    (stream-cons s0 (stream-cons (- s1) (negate-alternating sn)))))
 
-(define cos-series
-  (stream-cons 1 (negate-stream (integrate-series sin-series))))
+(define (reciprocal s)
+  (stream-map (lambda (x) (/ 1 x)) s))
 
-(define sin-series
-  (stream-cons 0 (integrate-series cos-series)))
-
-;;; (from exercise 60)
-
-(define (mul-series s1 s2)
-  (stream-cons (* (stream-car s1) (stream-car s2))
-               (add-streams (scale-stream (stream-car s1)
-                                          (stream-cdr s2))
-                            (mul-series (stream-cdr s1)
-                                        s2))))
-;;; exercise 61
-
-(define (invert-unit-series S)
-  (stream-cons 1
-               (negate-stream (mul-series (stream-cdr S)
-                                          (invert-unit-series S)))))
+(define ln2
+  (stream-map exact->inexact
+              (partial-sums (negate-alternating (reciprocal counting-numbers)))))
 
 (define (d s)
-  (display-stream (stream-take 5 s)))
+  (display-stream (stream-take 1000 s)))
 
-(d cos-series)
-(d (invert-unit-series cos-series))
-(d (mul-series cos-series (invert-unit-series cos-series)))
+(d ln2)
+
+; Even after 1000 iterations, this partial sum still hasn't quite converged
+; on ln(2) = 0.693 -- at iteration 1000 it's still alternating between
+; 0.6936 and 0.6926.
