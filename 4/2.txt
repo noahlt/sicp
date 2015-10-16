@@ -1,0 +1,7 @@
+a. The apply clause in eval always has to come last, because it is the default case.  Everything in Lisp looks like it could be a function application; it is the broadest case.  So if we reorder the clauses in eval so that apply is not last, then the following clauses will never be matched - instead, our evaluator will always try to treat the expression as a function application.
+
+b. Louis, you are crazy, but you can change the syntax of the language by changing the definition of application? like so:
+
+(define (application? exp) (tagged-list? exp ‘call))
+
+
