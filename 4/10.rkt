@@ -37,6 +37,12 @@
 ; inline operation where + is the operator and the operands are
 ; '(1 2 3 4).  If we fail to find a consistent symbol at every
 ; other position inline, then we fall back to lispy prefix notation.
+;
+; This is a silly idea, of course, and this implementation is absurd,
+; but I wanted to implement infix operators on something more general
+; than a specific syntactic operator (as I did above with assignment)
+; and this was the first thing that came to mind that I could implement
+; completely via changing the syntactic tests and selectors.
 (define (inline-operator? exp)
   (and (odd? (length exp))
        (elts-equal? (every-other (cdr exp)))))
