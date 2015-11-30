@@ -38,6 +38,9 @@
 
 ; Bindings
 
+; In light of the footnote, I tried to make frames/bindings
+; more of an abstraction, with limited success.
+
 (define (binding-var binding) (car binding))
 (define (binding-val binding) (cadr binding))
 (define (set-binding-val! binding val) (set-car! (cdr binding) val))
@@ -53,26 +56,26 @@
       (cons (apply make-frame bindings) base-env)))
 
 (define (lookup-variable-value var env)
-  (define (scan-frame var frame bindings)
+  (define (scan-frame var bindings)
     (if (null? bindings)
         (lookup-variable-value var (enclosing-environment env))
         (if (eq? (binding-var (car bindings)) var)
             (binding-val (car bindings))
-            (scan-frame var frame (cdr bindings)))))
+            (scan-frame var (cdr bindings)))))
   (if (empty-environment? env)
       (error "Unbound variable" var)
-      (scan-frame var (first-frame env) (get-bindings (first-frame env)))))
+      (scan-frame var (get-bindings (first-frame env)))))
 
 (define (set-variable-value! var val env)
-  (define (scan-frame var frame bindings)
+  (define (scan-frame var bindings)
     (if (null? bindings)
         (set-variable-value! var (enclosing-environment env))
         (if (eq? (binding-var (car bindings)) var)
             (set-binding-val! (car bindings) val)
-            (scan-frame var frame (cdr bindings)))))
+            (scan-frame var (cdr bindings)))))
   (if (empty-environment? env)
       (error "Unbound variable" var)
-      (scan-frame var (first-frame env) (get-bindings (first-frame env)))))
+      (scan-frame var (get-bindings (first-frame env)))))
 
 (define (define-variable! var val env)
   (define (scan-frame var frame bindings)
@@ -92,17 +95,17 @@
 
 (set-variable-value! 'x 5 e1)
 (show e1)
-(show (lookup-variable-value 'x e1))
-(show (lookup-variable-value 'y e1))
+(show 'x (lookup-variable-value 'x e1))
+(show 'y (lookup-variable-value 'y e1))
 
 (define-variable! 'z 0 e1)
 (show e1)
-(show (lookup-variable-value 'x e1))
-(show (lookup-variable-value 'y e1))
-(show (lookup-variable-value 'z e1))
+(show 'x (lookup-variable-value 'x e1))
+(show 'y (lookup-variable-value 'y e1))
+(show 'z (lookup-variable-value 'z e1))
 
 (define e2 (extend-environment '((a 1) (x 99)) e1))
 (show e2)
-(show (lookup-variable-value 'a e2))
-(show (lookup-variable-value 'x e2))
-(show (lookup-variable-value 'x e1))
+(show 'a '(e2) (lookup-variable-value 'a e2))
+(show 'x '(e2) (lookup-variable-value 'x e2))
+(show 'x '(e1) (lookup-variable-value 'x e1))
