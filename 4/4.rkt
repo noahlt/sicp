@@ -23,7 +23,7 @@
 (define (dispatching-eval exp env)
   (cond ((self-evaluating? exp) exp)
         ((variable? exp) (lookup-variable-value exp env))
-        (else (let (form (get 'forms (car exp)))
+        (else (let ((form (get 'forms (car exp))))
                 (if (null? form)
                     (sicp-apply (sicp-eval (operator exp) env)
                            (list-of-values (operands exp) env))
