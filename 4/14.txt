@@ -1,0 +1,5 @@
+Let’s call the metacircular evaluator we just implemented sicp-eval, and the eval that came with the lisp interpretation we’re using builtin-eval.
+
+Eva’s version of map was typed into sicp-eval, so when it calls apply it’s using sicp-eval’s apply, which knows how to work with function definitions as represented by sicp-eval.
+
+Louis’s map uses builtin-eval’s apply, which only knows how to work with its own representation of function definitions.  When Louis tries to call map, sicp-eval first evaluates the function he passes in, returning sicp-eval’s representation of a function.  But then sicp-eval passes its representation of a function as an argument to builtin-eval’s map, which then passes the sicp-eval representation of a function to builtin-eval’s apply (which obviously is expecting builtin-eval’s representation of a function).  This is why things go horribly wrong.
